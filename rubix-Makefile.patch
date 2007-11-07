@@ -1,0 +1,18 @@
+--- rubix-1.0.5/Makefile~	2007-11-08 00:14:11.000000000 +0100
++++ rubix-1.0.5/Makefile	2007-11-08 00:13:55.000000000 +0100
+@@ -32,12 +32,12 @@
+ OBJ=cube.o event.o fillpoly.o line.o main.o screen.o
+ 
+ rubix : $(OBJ)
+-	$(CC) $(CFLAGS) -o $@ $^ -lm $(XLIB) $(EXTRALIBS)
++	$(CC) $(CFLAGS) $(OPTFLAGS) -o $@ $^ -lm $(XLIB) $(EXTRALIBS)
+ #	strip rubix
+ 
+ install :
+-	mkdir -p $(GAMESDIR)
+-	install -c -s rubix $(GAMESDIR)
++	mkdir -p $(DESTDIR)$(GAMESDIR)
++	install -c -s rubix $(DESTDIR)$(GAMESDIR)
+ 
+ clean :
+ 	rm -f *.o *~ core *.bak *.dat gmon.out
