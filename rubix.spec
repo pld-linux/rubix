@@ -9,6 +9,7 @@ Source0:	http://sed.free.fr/rubix/%{name}-%{version}.tar.bz2
 # Source0-md5:	cb5c672eb9dd6286c292d0408dbec26d
 Patch0:		%{name}-Makefile.patch
 URL:		http://sed.free.fr/rubix/
+BuildRequires:	xorg-lib-libX11-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,7 +26,9 @@ rubix jest symulacją kostki Rubika dla systemów Linux.
 %{__make} \
 	CC="%{__cc}" \
 	OPTFLAGS="%{rpmcflags}" \
-	GAMESDIR="%{_bindir}"
+	GAMESDIR="%{_bindir}" \
+	XINC= \
+	XLIB=-lX11
 
 %install
 rm -rf $RPM_BUILD_ROOT
