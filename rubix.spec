@@ -1,12 +1,12 @@
 Summary:	Rubik's cube simulation
 Summary(pl.UTF-8):	Symulacja kostki Rubika
 Name:		rubix
-Version:	1.0.5
+Version:	1.0.6
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://sed.free.fr/rubix/%{name}-%{version}.tar.bz2
-# Source0-md5:	cb5c672eb9dd6286c292d0408dbec26d
+# Source0-md5:	76346b49b67dd7ade0f69b4ae77e3f3a
 Patch0:		%{name}-Makefile.patch
 URL:		http://sed.free.fr/rubix/
 BuildRequires:	xorg-lib-libX11-devel
@@ -26,6 +26,7 @@ rubix jest symulacją kostki Rubika dla systemów Linux.
 %{__make} \
 	CC="%{__cc}" \
 	OPTFLAGS="%{rpmcflags}" \
+	LDFLAGS="%{rpmldflags}" \
 	GAMESDIR="%{_bindir}" \
 	XINC= \
 	XLIB=-lX11
