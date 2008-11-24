@@ -5,7 +5,7 @@
  
  rubix : $(OBJ)
 -	$(CC) $(CFLAGS) -o $@ $^ -lm $(XLIB) $(EXTRALIBS)
-+	$(CC) $(CFLAGS) $(OPTFLAGS) -o $@ $^ -lm $(XLIB) $(EXTRALIBS)
++	$(CC) $(CFLAGS) $(OPTFLAGS) -o $@ $^ -lm $(LDFLAGS) $(XLIB) $(EXTRALIBS)
  #	strip rubix
  
  install :
